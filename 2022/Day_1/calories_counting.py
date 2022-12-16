@@ -1,3 +1,5 @@
+from itertools import accumulate 
+
 def calculate_calories (calories_string : str):
     calories_per_elf = calories_string.split('\n')
     calories_per_elf = map(int, calories_per_elf)
@@ -14,6 +16,10 @@ with open("elves_calories.txt", "r") as calories_file:
     
     #Getting elves total calories
     elves_calories = [*map(calculate_calories, calories_arr)]
-    print(f"The maximum number of calories is : {max(elves_calories)}")
+    elves_calories.sort()
+    print(f"The maximum number of calories is : {elves_calories[-1]}")
+
+    top_three_elves = elves_calories[-3::]
     
+    print(f"{top_three_elves} : Total = {sum(top_three_elves)}")
     
