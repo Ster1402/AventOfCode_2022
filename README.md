@@ -1,1 +1,1 @@
-"# AventOfCode_2022" 
+# AventOfCode_2022"
